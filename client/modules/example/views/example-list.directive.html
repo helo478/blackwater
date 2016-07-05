@@ -1,7 +1,7 @@
-<p>example-list.directive.html</p>
 <div>
-	<p>examples list directive</p>
-	<div ng-repeat="example in exampleListDirectiveCtrl.examples">
-	  <p>{{example.name}}</p>
-	</div>
+	<p>example-list.directive.html</p>
+	<ul>
+		<li ng-repeat="example in exampleListDirectiveCtrl.examples" ng-bind="example.name">
+		</li>
+  </ul>
 </div>
