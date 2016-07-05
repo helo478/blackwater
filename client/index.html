@@ -14,7 +14,7 @@
 
   </head>
   <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" ng-controller="NavbarCtrl as navbarCtrl">
       <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -32,8 +32,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li><a href="/#/">Home</a></li>
-            <li><a href="/#/examples">Examples</a></li>
+            <li ng-class="{ active: navbarCtrl.isActive('/') }"><a href="/#/">Home</a></li>
+            <li ng-class="{ active: navbarCtrl.isActive('/examples') }"><a href="/#/examples">Examples</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->

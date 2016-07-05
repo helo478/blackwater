@@ -53,7 +53,7 @@ module.exports = function(grunt) {
     watch: { // Task that updates client application code in the public folder in real time
       all: {
         files: ['client/**/*'],
-        tasks: ['copy'],
+        tasks: ['copy', 'concat'],
         options: {
           spawn: false,
         },
