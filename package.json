@@ -1,7 +1,7 @@
 {
   "name": "blackwater",
   "version": "1.0.0",
-  "description": "A quickstart using AngularJS, node.js with Express, and MongoDB with Mongoose",
+  "description": "A quickstart using AngularJS, node.js with Express, Bootstrap, and MongoDB with Mongoose",
   "repository": "https://github.com/helo478/blackwater.git",
   "main": "server.js",
   "scripts": {
