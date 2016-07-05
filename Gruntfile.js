@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    copy: {
+    copy: { // Task that copies the client application code to the public folder
       app: {
         files: [
           {
@@ -14,7 +14,7 @@ module.exports = function(grunt) {
           }
         ]
       },
-      lib: {
+      lib: { // Task that copies select library code to the public folder
         files: [
           {
             expand: true,
@@ -24,14 +24,17 @@ module.exports = function(grunt) {
              */
             src: [
               'angular/angular.min.js',
-              'angular-route/angular-route.min.js'
+              'angular-route/angular-route.min.js',
+              'jquery/dist/jquery.min.js',
+              'bootstrap/dist/js/bootstrap.min.js',
+              'bootstrap/dist/css/bootstrap.min.css' // Bootstrap CSS
             ],
             dest: 'public/lib'
           }
         ],
       },
     },
-    watch: {
+    watch: { // Task that updates client application code in the public folder in real time
       all: {
         files: ['client/**/*'],
         tasks: ['copy'],
@@ -48,6 +51,6 @@ module.exports = function(grunt) {
   // Load the plugin that provides the "watch" task.
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  // Default task(s).
+  // Default task(s). Copy code to the public folder and update as necessary.
   grunt.registerTask('default', ['copy', 'watch']);
 };
