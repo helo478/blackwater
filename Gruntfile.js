@@ -15,6 +15,16 @@ module.exports = function(grunt) {
           }
         ]
       },
+      images: {
+        files: [
+          {
+            expand: true,
+            cwd: 'client',
+            src: 'images/**/*',
+            dest: 'public'
+          }
+        ]
+      }
     },
     concat: {
       options: {
