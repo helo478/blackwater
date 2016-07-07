@@ -6,6 +6,28 @@
 
     this.examples = [];
 
+    this.getExample = function(id) {
+      $log.debug('Entering exampleService.getExample');
+
+      var defer = $q.defer();
+
+      $http.get('/examples/' + id).then(
+        function(response) {
+          $log.debug('getExample resolve', response);
+          defer.resolve(response.data[0]);
+        },
+        function(error, status) {
+          $log.log('getExample reject', error, status);
+          defer.reject('Unable to load example ' + id);
+        },
+        function(progress) {
+          $log.debug('getExample notify', progress);
+          defer.notify(progress);
+        });
+
+      return defer.promise;
+    };
+
     this.getExamples = function() {
       $log.debug('Entering exampleService.getExamples');
 
@@ -22,7 +44,7 @@
             defer.reject(error, status);
           },
           function(progress) {
-            $log.debug('postExample notify', progress);
+            $log.debug('getExamples notify', progress);
             defer.notify(progress);
           });
 
