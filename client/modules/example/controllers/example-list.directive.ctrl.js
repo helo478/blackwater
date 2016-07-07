@@ -12,6 +12,7 @@
         });
 
         this.refreshExamples = function() {
+          $log.debug('Entering ExampleListDirectiveCtrl.refreshExamples');
           exampleService.getExamples().then(
               function(response) {
                 $log.debug('refreshExamples resolve', response);
