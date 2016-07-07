@@ -7,6 +7,7 @@
 
   var Example = require('../models/example.model.js');
 
+  // Handle get request to get a single example resource
   router.get('/:id', function(req, res, next) {
     var id = req.params.id;
     console.log('handling get /examples/' + id);
@@ -20,7 +21,7 @@
     });
   });
 
-  // Handl get request to get all example resources
+  // Handle get request to get all example resources
   router.get('/', function(req, res, next) {
     console.log('handling get /examples');
     Example.find({}, function(err, examples) {

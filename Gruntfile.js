@@ -28,7 +28,7 @@ module.exports = function(grunt) {
     },
     concat: {
       options: {
-        separator: ';'
+        separator: '\n'
       },
       jslib: {
         src: [ // List all of the javascript libraries in node_modules that the client needs
